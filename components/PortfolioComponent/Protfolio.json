@@ -1,0 +1,358 @@
+{
+  "protfolioData": [
+    {
+      "HomeSection": {
+        "avatarAlt": "Avatar",
+        "greeting": "</> Hello I'm",
+        "name": "Barani Govindharaj",
+        "title": "Software Engineer | Reactjs & Nextjs | React Native | Python",
+        "summary": "Frontend Developer with 3.4+ years of experience building scalable web applications using React.js, Next.js, TypeScript, Redux Toolkit, and AEM. Skilled in developing real-time systems with WebSocket, optimizing UI performance, and creating responsive, accessible interfaces. Experienced in Chrome Extension and React Native mobile app development, delivering production-ready solutions in Agile environments.",
+        "buttons": {
+          "viewProjects": "View Projects",
+          "downloadResume": "Download Resume",
+          "contactMe": "Contact Me"
+        }
+      }
+    },
+    {
+      "ProjectsSection": {
+        "title": "Featured Projects",
+        "description": "A selection of my recent work and personal projects",
+        "projects": [
+          {
+            "name": "Showcasa AI",
+            "description": "AI-powered media generation platform that transforms user prompts into images, videos, reels, cartoons, short films, and podcasts in real time.",
+            "image": "https://showcasaai.blob.core.windows.net/applicationasset/1440_Image.svg",
+            "sourceCodeLink": "https://www.showcasaai.io/",
+            "liveDemoLink": "https://app.showcasaai.io/login",
+            "technologies": [
+              "React.js",
+              "TypeScript",
+              "WebSocket",
+              "Material-UI",
+              "Framer-Motion"
+            ],
+            "cta": {
+              "sourceCode": "Source",
+              "liveDemo": "Live Page"
+            }
+          },
+          {
+            "name": "Chrome Extension - Try on Studio",
+            "description": "Chrome extension integrated with e-commerce platforms allowing users to generate AI-powered outfit previews inreal time. ",
+            "image": "/tryon.png",
+            "sourceCodeLink": "https://chromewebstore.google.com/detail/ljommionbigmaagdnhnpffgfghgdbmin?utm_source=item-share-cb",
+            "liveDemoLink": "https://chromewebstore.google.com/detail/tryon-studio-%E2%80%94-showcasaai/ljommionbigmaagdnhnpffgfghgdbmin?utm_source=item-share-cb",
+            "technologies": [
+              "React.js",
+              "WebSocket",
+              "Material-UI",
+              "Chrome Extension APIs"
+            ],
+            "cta": {
+              "sourceCode": "Source",
+              "liveDemo": "Live Page"
+            }
+          },
+          {
+            "name": "Showcasa AI - Mobile App",
+            "description": "A cross-platform mobile application version of the Showcasaai AI-powered media generation platform, designed to transform user high-quality images, videos, and cartoons using advanced generative models. The app provides a seamless mobile interface for users to interact with multiple AI capabilities, offering diverse content generation options in real time. Built with a focus on performance, scalability, and creative interactivity.",
+            "image": "/mobileapp.png",
+            "sourceCodeLink": "https://play.google.com/store/apps/details?id=com.agiliz.showcase&hl=en_IN",
+            "liveDemoLink": "https://play.google.com/store/apps/details?id=com.agiliz.showcase&hl=en_IN",
+            "technologies": [
+              "React Native",
+              "WebSocket",
+              "Github-Copilot",
+              "Vibe-Coding"
+            ],
+            "cta": {
+              "sourceCode": "Source",
+              "liveDemo": "Live Page"
+            }
+          },
+          {
+            "name": "Leap Rewards",
+            "description": "An application allowing users to purchase products from various brands, collect points, and unlock social and sustainable rewards such as planting a tree or donating a meal.",
+            "image": "/LeapRewards.png",
+            "sourceCodeLink": "https://www.leaprewards.com/content/leaprewards/ca/en/index.html",
+            "liveDemoLink": "https://www.leaprewards.com/content/leaprewards/ca/en/index.html",
+            "technologies": [
+              "React.js",
+              "Next.js",
+              "Tailwind",
+              "Material-UI"
+            ],
+            "cta": {
+              "sourceCode": "Source",
+              "liveDemo": "Live Page"
+            }
+          },
+          {
+            "name": "AEM - Web (Magnum)",
+            "description": "Worked on a robust Content Management System (CMS) project focused on building and migrating websites for various clients to AEM, successfully delivering 50+ websites",
+            "image": "/AEM.png",
+            "sourceCodeLink": "https://www.magnumicecream.com/in/sitemap.html",
+            "liveDemoLink": "https://www.magnumicecream.com/in/home.html",
+            "technologies": [
+              "HTML",
+              "SASS",
+              "JavaScript",
+              "AEM",
+              "CSS"
+            ],
+            "cta": {
+              "sourceCode": "Source",
+              "liveDemo": "Live Page"
+            }
+          },
+          {
+            "name": "SpendWorkz",
+            "description": "Developed a user-friendly application that enables buyers to select and communicate with multiple suppliers for product purchases. Implemented a real-time chat module for seamless communication and product information sharing. The client has currently removed the live demo and source code links.",
+            "image": "/spendworkz.png",
+            "technologies": [
+              "React.js",
+              "Redux",
+              "Material-UI"
+            ]
+          },
+          {
+            "name": "Chakra Jothidanilayam",
+            "description": "Chakra Jothida Nilayam is an astrology appointment booking platform where customers can schedule consultation time slots with an astrologer. The astrologer can view booking requests and accept or reject them based on availability, making appointment management simple and organized. Currently, this is a personal project under development.",
+            "image": "/Personal.png",
+            "technologies": [
+              "React.js",
+              "Vite",
+              "Material-UI",
+              "Backend: Python (Fast API)",
+              "Database: MongoDB"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "aboutSection": {
+        "title": "About Me",
+        "description": "Get to know more about my background and expertise",
+        "professional": {
+          "summaryTitle": "Professional Summary",
+          "summary": "Frontend Developer with 3.4+ years of experience building scalable, high-performance web using React.js, Next.js, TypeScript, Redux Toolkit, and AEM. Strong expertise in developing real-time systems using WebSocket, optimizing UI performance through code splitting, lazy loading, and rendering optimization, and  delivering responsive, accessible user interfaces. Experienced in Chrome Extension development and crossplatform mobile application development using React Native, following a vibe coding approach to build intuitive and visually engaging user experiences. Proven ability to collaborate in Agile environments and deliver productionready solutions aligned with business requirements."
+        },
+        "stats": [
+          {
+            "id": 1,
+            "title": "4+ Years Experience",
+            "description": "Building modern web applications with the React ecosystem",
+            "icon": "code"
+          },
+          {
+            "id": 2,
+            "title": "20+ Projects Delivered",
+            "description": "Successfully shipped projects for clients worldwide",
+            "icon": "briefcase"
+          },
+          {
+            "id": 3,
+            "title": "Performance Focused",
+            "description": "Optimizing applications for speed and user experience",
+            "icon": "award"
+          }
+        ],
+        "Technologies": {
+          "title": "Technologies I Work With",
+          "technologies": {
+            "frontend": [
+              "React.js",
+              "Next.js",
+              "React Native",
+              "TypeScript",
+              "Redux Toolkit",
+              "Material-UI",
+              "Tailwind CSS",
+              "Framer Motion",
+              "WebSocket"
+            ],
+            "backend": [
+              "Python (FastAPI)",
+              "MongoDB",
+              "REST APIs"
+            ],
+            "CMS": [
+              "Adobe Experience Manager (AEM)"
+            ],
+            "tools": [
+              "Git",
+              "Azure DevOps",
+              "GitHub Copilot",
+              "Vibe Coding"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "skillsAndExpertise": {
+        "title": "Skills & Expertise",
+        "description": "My technical skills and proficiency levels",
+        "skills": {
+          "frontend": {
+            "languages": [
+              "React.js",
+              "Next.js",
+              "React Native",
+              "TypeScript",
+              "WebSocket"
+            ],
+            "proficiency": [
+              "90%",
+              "60%",
+              "50%",
+              "80%",
+              "85%"
+            ]
+          },
+          "backend": {
+            "languages": [
+              "Python (FastAPI)",
+              "MongoDB",
+              "REST APIs"
+            ],
+            "proficiency": [
+              "30%",
+              "30%",
+              "80%"
+            ]
+          },
+          "cms": {
+            "languages": [
+              "Adobe Experience Manager (AEM)"
+            ],
+            "proficiency": [
+              "80%"
+            ]
+          },
+          "styling": {
+            "languages": [
+              "CSS",
+              "SASS",
+              "Tailwind CSS",
+              "Material-UI"
+            ],
+            "proficiency": [
+              "80%",
+              "80%",
+              "85%",
+              "80%"
+            ]
+          },
+          "stateManagement": {
+            "languages": [
+              "Redux Toolkit",
+              "Context API"
+            ],
+            "proficiency": [
+              "70%",
+              "80%"
+            ]
+          },
+          "toolsAndOthers": {
+            "languages": [
+              "Git",
+              "Azure DevOps",
+              "GitHub Copilot",
+              "Vibe Coding"
+            ],
+            "proficiency": [
+              "80%",
+              "75%",
+              "80%",
+              "85%"
+            ]
+          }
+        },
+        "additionalcompetencies": {
+          "title": "Additional Competencies",
+          "competencies": [
+            "Performance Optimization",
+            "Real-time Systems",
+            "Responsive Design",
+            "Cross-platform Development",
+            "Agile Methodologies",
+            "Responsive Design",
+            "Cross-Browser Compatibility",
+            "SEO Best Practices",
+            "Agile/Scrum",
+            "Code Review",
+            "Testing (Jest, React Testing Library)",
+            "CI/CD Pipelines",
+            "Webpack",
+            "Vite"
+          ]
+        }
+      }
+    },
+    {
+      "workExperienceSection": {
+        "title": "Work Experience",
+        "description": "My professional journey and key contributions",
+        "workExperienceSection": [
+          {
+            "role": "Software Engineer",
+            "company": "AgilizTech Software Solutions Pvt Ltd",
+            "duration": "May 2023 - Present",
+            "responsibilities": [
+              "Developed and maintained web applications using React.js and Next.js",
+              "Implemented RESTful APIs with Python (FastAPI)",
+              "Collaborated with cross-functional teams to deliver high-quality software"
+            ],
+            "present": "Yes",
+            "icon": "work_icon.png"
+          },
+          {
+            "role": "Software Intern",
+            "company": "AgilizTech Software Solutions Pvt Ltd",
+            "duration": "Nov 2022 - Apr 2023",
+            "responsibilities": [
+              "Assisted in developing and maintaining web applications using HTML, CSS, JavaScript, React.js, and Adobe Experience Manager (AEM).",
+              "Worked on UI components and improved website responsiveness and performance.",
+              "Collaborated with cross-functional teams to deliver high-quality software solutions."
+            ],
+            "present": "No",
+            "icon": "work_icon.png"
+          }
+        ]
+      }
+    }, 
+    {
+      "contactSections":{
+        "title": "Get In Touch",
+        "description": "I'm always open to discussing new projects, creative ideas, or opportunities",
+        "contactInformation": [
+          {
+            "type": "Email",
+            "value": "barani0220@gmail.com",
+            "icon": "email_icon.png"
+          },
+          {
+            "type": "Phone",
+            "value": "+91 - 7402645726",
+            "icon": "phone_icon.png"
+          },
+          {
+            "type": "LinkedIn",
+            "value": "https://www.linkedin.com/in/barani-govindharaj-9b0a3221a/",
+            "icon": "linkedin_icon.png"
+          },
+          {
+            "type": "GitHub",
+            "value": "https://github.com/BaraniGovindharaj",
+            "icon": "github_icon.png"
+          }
+        ],
+        "connect": "Let's Connect",
+        "message": "Whether you have a question, want to discuss a project, or just want to say hi, I'll try my best to get back to you as soon as possible."
+      }
+    }
+  ]
+}
