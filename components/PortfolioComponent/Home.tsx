@@ -43,7 +43,7 @@ const Home: React.FC<Propstypes> = ({setActivePage, homeSection}) => {
   };
 
   return (
-    <section className="relative overflow-hidden [background:var(--home-bg)] min-h-screen text-white px-6 py-12 md:py-20">
+    <section className="relative overflow-hidden [background:var(--home-bg)] min-h-[85vh] text-white px-6 py-8 md:py-12">
       <div className="w-full max-w-6xl mx-auto">
         <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-8 md:gap-12">
           <motion.div
@@ -64,14 +64,14 @@ const Home: React.FC<Propstypes> = ({setActivePage, homeSection}) => {
             <div className="flex flex-col sm:flex-row gap-3">
               <ButtonComponent
                 onClick={() => setActivePage && setActivePage("projects")}
-                className="px-5 py-2.5 rounded-md bg-gradient-to-r from-[var(--color-secondary)] to-[var(--color-primary)] text-white font-semibold transition-opacity hover:opacity-85 active:opacity-70 flex gap-3 items-center justify-center"
+                className="px-5 py-2.5 rounded-md bg-gradient-to-r from-[var(--color-secondary)] to-[var(--color-primary)] text-white font-semibold transition-opacity hover:opacity-85 active:opacity-70 flex gap-3 items-center justify-center cursor-pointer"
                 startIcon={<ViewInArRoundedIcon fontSize="small" />}
               >
                 {homeSection?.buttons.viewProjects}
               </ButtonComponent>
               <ButtonComponent
                 onClick={handleResumeDownload}
-                className="px-5 py-2.5 rounded-md bg-transparent [border:var(--border-button-primary)] text-white font-semibold transition-opacity hover:opacity-85 active:opacity-70 flex gap-3 items-center justify-center"
+                className="px-5 py-2.5 rounded-md bg-transparent [border:var(--border-button-primary)] text-white font-semibold transition-opacity hover:opacity-85 active:opacity-70 flex gap-3 items-center justify-center cursor-pointer"
                 startIcon={
                   <DownloadOutlinedIcon
                     fontSize="small"
@@ -83,7 +83,7 @@ const Home: React.FC<Propstypes> = ({setActivePage, homeSection}) => {
               </ButtonComponent>
               <ButtonComponent
                 onClick={() => handleSectionScroll("contact")}
-                className="px-5 py-2.5 rounded-md bg-transparent [border:var(--border-button-secondary)] text-white font-semibold transition-opacity hover:opacity-85 active:opacity-70 flex gap-3 items-center justify-center"
+                className="px-5 py-2.5 rounded-md bg-transparent [border:var(--border-button-secondary)] text-white font-semibold transition-opacity hover:opacity-85 active:opacity-70 flex gap-3 items-center justify-center cursor-pointer"
                 startIcon={
                   <DownloadOutlinedIcon
                     fontSize="small"

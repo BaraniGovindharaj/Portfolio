@@ -9,7 +9,7 @@ const ButtonComponent: React.FC<ButtonComponentProps> = ({ children, onClick, cl
   return (
     <button
       onClick={onClick}
-      className={className}
+      className={`cursor-pointer ${className}`}
     >
       {leadingIcon ? <span>{leadingIcon}</span> : null}
       {children}
