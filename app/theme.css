@@ -1,19 +1,20 @@
 /* customize theme */
 :root {
-    --home-bg: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+    --home-bg: linear-gradient(135deg, #0b1326 0%, #1b2b44 100%);
     --font-family-primary: 'Public Sans';
-    --color-primary:#60a5fa;
-    --box-shadow-primary:0 4px 14px rgba(96, 165, 250, 0.4);
-    --text-bg: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
-    --border-button-primary: 1px solid rgb(96, 165, 250);
-    --border-button-secondary: 1px solid rgb(167, 139, 250);
-    --icon-color-primary: rgb(96, 165, 250);
-    --icon-color-secondary: rgb(167, 139, 250);
-    --button-hover: rgba(96, 165, 250, 0.1);
-    --chip-border: 1px solid rgba(96, 165, 250, 0.3);
-    --chip-bg:rgba(96, 165, 250, 0.1);
-    --progress-bg: linear-gradient(90deg, #60a5fa 0%, #a78bfa 100%);
-    --avatar-border: 4px solid rgb(96, 165, 250);
+    --color-primary:#4da3ff;
+    --color-secondary:#a855f7;
+    --box-shadow-primary:0 8px 28px rgba(77, 163, 255, 0.35);
+    --text-bg: linear-gradient(90deg, #4da3ff 0%, #a855f7 100%);
+    --border-button-primary: 1px solid rgba(77, 163, 255, 0.95);
+    --border-button-secondary: 1px solid rgba(168, 85, 247, 0.95);
+    --icon-color-primary: rgb(77, 163, 255);
+    --icon-color-secondary: rgb(168, 85, 247);
+    --button-hover: rgba(77, 163, 255, 0.14);
+    --chip-border: 1px solid rgba(77, 163, 255, 0.35);
+    --chip-bg:rgba(77, 163, 255, 0.14);
+    --progress-bg: linear-gradient(90deg, #4da3ff 0%, #a855f7 100%);
+    --avatar-border: 4px solid rgb(77, 163, 255);
     --heart-pink: #ff6b81;
 
 }

@@ -1,11 +1,13 @@
 'use client';
 
 import React from "react";
+import { motion } from "framer-motion";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import PhoneInTalkOutlinedIcon from '@mui/icons-material/PhoneInTalkOutlined';
 import ArrowUpwardOutlinedIcon from '@mui/icons-material/ArrowUpwardOutlined';
+import { sectionContainer, sectionItem, sectionViewport } from "./motionVariants";
 
 type FooterProps = {
   name?: string;
@@ -54,49 +56,45 @@ export default function Footer({ name, contactInformation }: FooterProps) {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="[background:var(--home-bg)] text-white px-6 py-14">
-      <div className="w-full max-w-4xl mx-auto flex flex-col items-center">
-        <div className="flex items-center gap-5">
+    <motion.footer
+      className="portfolio-section text-white px-6 py-8 border-t border-white/10"
+      variants={sectionContainer}
+      initial="hidden"
+      whileInView="visible"
+      viewport={sectionViewport}
+    >
+      <div className="w-full max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+        <motion.p className="text-sm text-white/60 text-center md:text-left" variants={sectionItem}>© {currentYear} {name || "Barani Govindharaj"}. All rights reserved.</motion.p>
+        <motion.div className="flex items-center gap-3" variants={sectionItem}>
           {socialLinks.map((item) => (
             <button
               key={item.key}
               type="button"
-              onClick={() => item.link && window.open(item.link.startsWith("http") ? item.link : item.key === "email" ? `mailto:${item.link}` : `tel:${item.link}`, "_blank")}
-              className="h-13 w-13 rounded-full [border:1px_solid_rgba(96,165,250,0.3)] bg-white/5 text-white/60 hover:text-[var(--color-primary)] transition-colors flex items-center justify-center"
+              onClick={() => {
+                if (!item.link) return;
+                let url = item.link;
+                if (item.key === "email") url = `mailto:${item.link}`;
+                else if (item.key === "phone") url = `tel:${item.link}`;
+                else if (!item.link.startsWith("http")) url = `https://${item.link}`;
+                window.open(url, "_blank");
+              }}
+              className="h-9 w-9 rounded-md [border:1px_solid_rgba(96,165,250,0.3)] bg-white/5 text-white/60 hover:text-[var(--color-primary)] transition-colors flex items-center justify-center"
               aria-label={item.key}
             >
               {item.icon}
             </button>
           ))}
-        </div>
-
-        <nav className="mt-4 flex flex-wrap items-center justify-center gap-8 text-md text-white/60">
-          {navItems.map((item) => (
-            <button
-              key={item.target}
-              type="button"
-              onClick={() => handleSectionScroll(item.target)}
-              className="hover:text-[var(--color-primary)] transition-colors text-sm"
-            >
-              {item.label}
-            </button>
-          ))}
-        </nav>
-
-        <p className="mt-12 text-lg text-white/70 text-center leading-none">
-          Made with <span className="text-[var(--color-primary)]">💖</span> by {name || "Barani Govindharaj"}
-        </p>
-        <p className="mt-2 text-lg text-white/60 text-center leading-none">© {currentYear} All rights reserved.</p>
-
-        <button
+        </motion.div>
+        <motion.button
           type="button"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="mt-12 h-14 w-14 rounded-full [border:1px_solid_rgba(96,165,250,0.5)] bg-white/5 text-[var(--color-primary)] flex items-center justify-center"
+          className="h-9 w-9 rounded-md [border:1px_solid_rgba(96,165,250,0.5)] bg-white/5 text-[var(--color-primary)] flex items-center justify-center"
           aria-label="Back to top"
+          variants={sectionItem}
         >
-          <ArrowUpwardOutlinedIcon />
-        </button>
+          <ArrowUpwardOutlinedIcon fontSize="small" />
+        </motion.button>
       </div>
-    </footer>
+    </motion.footer>
   );
 }
