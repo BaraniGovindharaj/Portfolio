@@ -3,7 +3,7 @@
     {
       "HomeSection": {
         "avatarAlt": "Avatar",
-        "greeting": "</> Hello I'm",
+        "greeting": "👋 Hello I'm",
         "name": "Barani Govindharaj",
         "title": "Software Engineer | Reactjs & Nextjs | React Native | Python",
         "summary": "Frontend Developer with 3.4+ years of experience building scalable web applications using React.js, Next.js, TypeScript, Redux Toolkit, and AEM. Skilled in developing real-time systems with WebSocket, optimizing UI performance, and creating responsive, accessible interfaces. Experienced in Chrome Extension and React Native mobile app development, delivering production-ready solutions in Agile environments.",
@@ -341,7 +341,7 @@
           },
           {
             "type": "LinkedIn",
-            "value": "https://www.linkedin.com/in/barani-govindharaj-9b0a3221a/",
+            "value": "www.linkedin.com/in/barani-govindharaj-b057ab219",
             "icon": "linkedin_icon.png"
           },
           {

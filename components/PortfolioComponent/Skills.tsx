@@ -1,6 +1,8 @@
 'use client';
 import React from "react";
+import { motion } from "framer-motion";
 import { SkillsProps } from "../../types/basicTypes";
+import { sectionContainer, sectionItem, sectionViewport } from "./motionVariants";
 
 export default function Skills({ skillsSection }: SkillsProps) {
     if (!skillsSection) {
@@ -35,28 +37,35 @@ export default function Skills({ skillsSection }: SkillsProps) {
     const competenciesTitle = rawAdditional?.title ?? "Additional Competencies";
 
     return (
-        <section className="[background:var(--home-bg)] min-h-screen text-white px-6 py-12">
-            <div className="w-full max-w-5xl mx-auto">
-                <h2 className="text-3xl text-center font-bold mb-2 leading-none">{skillsSection.title}</h2>
-                <p className="text-lg text-center mb-8 leading-none">{skillsSection.description}</p>
+        <motion.section
+            className="portfolio-section min-h-screen text-white px-6 py-16"
+            variants={sectionContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={sectionViewport}
+        >
+            <div className="w-full max-w-6xl mx-auto">
+                <motion.h2 className="section-title" variants={sectionItem}>{skillsSection.title}</motion.h2>
+                <div className="section-title-underline" />
+                <motion.p className="text-md text-center mb-10 mt-4 leading-none text-white/70" variants={sectionItem}>{skillsSection.description}</motion.p>
 
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {skillGroups.map(([groupName, group]) => (
-                        <div key={groupName} className="bg-white/10 rounded-[19%] p-6">
-                            <h3 className="text-xl font-semibold mb-4 capitalize">{groupName}</h3>
+                        <motion.div key={groupName} className="panel-card p-6" variants={sectionItem}>
+                            <h3 className="text-lg font-semibold mb-4 capitalize text-[var(--icon-color-secondary)]">{groupName}</h3>
                             <ul className="space-y-4">
                                 {group.languages.map((language, index) => (
                                     <li key={`${groupName}-${language}`}>
                                         
                                         <div className="mt-2 flex items-center justify-between gap-3 text-sm">
-                                            <span>{language}</span>
+                                            <span className="text-white/85">{language}</span>
                                             <span className="text-[var(--icon-color-primary)] font-semibold">
                                                 {group.proficiency[index] ?? "0%"}
                                             </span>
                                         </div>
-                                        <div className="w-full h-2 rounded-full bg-white/20 overflow-hidden">
+                                        <div className="w-full h-1.5 rounded-full bg-white/15 overflow-hidden">
                                             <div
-                                                className="h-2 rounded-full [background:var(--progress-bg)]"
+                                                className="h-1.5 rounded-full [background:var(--progress-bg)]"
                                                 style={{
                                                     width: `${getPercentage(group.proficiency[index])}%`
                                                 }}
@@ -65,17 +74,17 @@ export default function Skills({ skillsSection }: SkillsProps) {
                                     </li>
                                 ))}
                             </ul>
-                        </div>
+                        </motion.div>
                     ))}
             </div>
-                <div className="mt-8 bg-white/10 rounded-lg p-6">
+                <motion.div className="mt-8 panel-card p-6" variants={sectionItem}>
                     <h3 className="text-xl font-semibold mb-4">{competenciesTitle}</h3>
                     {competencies.length > 0 ? (
                         <div className="flex flex-wrap gap-2">
                             {competencies.map((competency, index) => (
                                 <span
                                     key={index}
-                                    className="inline-block bg-[var(--chip-bg)] [border:var(--chip-border)] rounded-full px-3 py-2 text-sm font-semibold text-white"
+                                    className="inline-block bg-[var(--chip-bg)] [border:var(--chip-border)] rounded-full px-3 py-2 text-sm font-semibold text-white/90"
                                 >
                                     {competency}
                                 </span>
@@ -84,8 +93,8 @@ export default function Skills({ skillsSection }: SkillsProps) {
                     ) : (
                         <p className="text-sm text-white/80">No additional competencies configured.</p>
                     )}
-                </div>
+                </motion.div>
             </div>
-        </section>
+        </motion.section>
     );
 }

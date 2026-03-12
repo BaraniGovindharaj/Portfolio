@@ -9,6 +9,7 @@ import Skills from "../components/PortfolioComponent/Skills";
 import WorkExperience from "@/components/PortfolioComponent/WorkExperience";
 import Contact from "@/components/PortfolioComponent/Contact";
 import Footer from "@/components/PortfolioComponent/Footer";
+import Header from "@/components/PortfolioComponent/Header";
 
 
 export default function HomePage() {
@@ -38,10 +39,11 @@ export default function HomePage() {
   }, [activePage]);
 
   return (
-    <div className="min-h-screen bg-zinc-50 font-sans">
-      <main className="w-full">
+    <div className="min-h-screen [background:var(--home-bg)] font-sans">
+      <Header name={homeSection?.name} />
+      <main className="w-full pt-14">
         <div id="home">
-          <Home setActivePage={setActivePage} homeSection={homeSection} />
+          <Home setActivePage={setActivePage} homeSection={homeSection}/>
         </div>
          <div id="about" ref={aboutRef}>
           <About aboutSection={aboutSection} />

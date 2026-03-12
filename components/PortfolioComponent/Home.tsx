@@ -1,69 +1,111 @@
 "use client";
 // Home page
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import ButtonComponent from "../ButtonComponent";
 import ViewInArRoundedIcon from "@mui/icons-material/ViewInArRounded";
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
 import { Propstypes } from "../../types/basicTypes";
 
+function useTypingEffect(text: string, speed = 20) {
+  const [displayed, setDisplayed] = useState("");
+
+  useEffect(() => {
+    setDisplayed("");
+    if (!text) return;
+    let i = 0;
+    const interval = setInterval(() => {
+      setDisplayed(text.slice(0, i + 1));
+      i++;
+      if (i >= text.length) clearInterval(interval);
+    }, speed);
+    return () => clearInterval(interval);
+  }, [text, speed]);
+
+  return displayed;
+}
+
 const Home: React.FC<Propstypes> = ({setActivePage, homeSection}) => {
+  const typedTitle = useTypingEffect(homeSection?.title ?? "", 100);
+
+   const handleSectionScroll = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
-    <div className=" [background:var(--home-bg)] min-h-screen flex items-center justify-center text-white px-6 py-12">
-      {/* Avatar section */}
-      <div className="flex flex-col md:flex-row items-center gap-4 max-w-5xl">
-        <div className="w-full lg:w-1/3" suppressHydrationWarning>
-          <img
-            src="/Barani.png"
-            alt="Avatar"
-            className="w-full h-full rounded-full object-cover [border:var(--avatar-border)] shadow-lg"
-          />
-        </div>
-        <div className="w-full lg:w-2/3">
-          <h1 className="text-[24px] font-bold mb-2">
-            {homeSection?.greeting}
-          </h1>
-          <p className="text-[56px] md:text-[72px] font-bold mb-1 leading-none tracking-tight text-[var(--color-primary)]">
-            {homeSection?.name}
-          </p>
-          <p className="text-[32px] font-bold leading-none mb-1">
-            {homeSection?.title}
-          </p>
-          <p className="text-md mb-4">{homeSection?.summary}</p>
-          <div className="flex flex-col md:flex-row gap-2.5">
-            <ButtonComponent
-              onClick={() => setActivePage && setActivePage("projects")}
-              className="w-full md:w-auto px-6 py-2 rounded-md bg-[var(--color-primary)] text-white font-medium transition-opacity hover:opacity-80 active:opacity-70 shadow-[var(--box-shadow-primary)] flex gap-4 justify-center items-center"
-              startIcon={<ViewInArRoundedIcon />}
-            >
-              {homeSection?.buttons.viewProjects}
-            </ButtonComponent>
-            <ButtonComponent
-              onClick={() => alert("Button clicked!")}
-              className="w-full md:w-auto px-6 py-2 rounded-md bg-transparent [border:var(--border-button-primary)] font-medium transition-opacity hover:opacity-80 active:opacity-70 flex gap-4 justify-center items-center text-[var(--icon-color-primary)]"
-              startIcon={
-                <DownloadOutlinedIcon
-                  style={{ color: "var(--icon-color-primary)" }}
+    <section className="relative overflow-hidden [background:var(--home-bg)] min-h-screen text-white px-6 py-12 md:py-20">
+      <div className="w-full max-w-6xl mx-auto">
+        <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-8 md:gap-12">
+          <motion.div
+            className="w-full md:w-3/5"
+            initial={{ opacity: 0, x: -36 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+          >
+            <p className="text-sm mb-3 text-[var(--icon-color-secondary)]">{homeSection?.greeting}</p>
+            <h1 className="text-[44px] md:text-[72px] font-bold mb-2 leading-[0.95] tracking-tight">
+              {homeSection?.name}
+            </h1>
+            <p className="text-[28px] md:text-[36px] font-semibold leading-tight mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)]">
+              {typedTitle}
+              <span className="animate-pulse text-[var(--color-primary)]">|</span>
+            </p>
+            <p className="text-sm md:text-base mb-6 text-white/75 max-w-2xl leading-relaxed">{homeSection?.summary}</p>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <ButtonComponent
+                onClick={() => setActivePage && setActivePage("projects")}
+                className="px-5 py-2.5 rounded-md bg-gradient-to-r from-[var(--color-secondary)] to-[var(--color-primary)] text-white font-semibold transition-opacity hover:opacity-85 active:opacity-70 flex gap-3 items-center justify-center"
+                startIcon={<ViewInArRoundedIcon fontSize="small" />}
+              >
+                {homeSection?.buttons.viewProjects}
+              </ButtonComponent>
+              <ButtonComponent
+                onClick={() => alert("Button clicked!")}
+                className="px-5 py-2.5 rounded-md bg-transparent [border:var(--border-button-primary)] text-white font-semibold transition-opacity hover:opacity-85 active:opacity-70 flex gap-3 items-center justify-center"
+                startIcon={
+                  <DownloadOutlinedIcon
+                    fontSize="small"
+                    style={{ color: "var(--icon-color-primary)" }}
+                  />
+                }
+              >
+                {homeSection?.buttons.downloadResume}
+              </ButtonComponent>
+              <ButtonComponent
+                onClick={() => handleSectionScroll("contact")}
+                className="px-5 py-2.5 rounded-md bg-transparent [border:var(--border-button-secondary)] text-white font-semibold transition-opacity hover:opacity-85 active:opacity-70 flex gap-3 items-center justify-center"
+                startIcon={
+                  <DownloadOutlinedIcon
+                    fontSize="small"
+                    style={{ color: "var(--icon-color-secondary)" }}
+                  />
+                }
+              >
+                {homeSection?.buttons.contactMe}
+              </ButtonComponent>
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="w-full md:w-2/5 flex justify-center"
+            initial={{ opacity: 0, x: 36, scale: 0.92 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            transition={{ duration: 0.75, ease: "easeOut", delay: 0.1 }}
+            suppressHydrationWarning
+          >
+            <div className="rounded-full p-2 [background:var(--text-bg)] shadow-[0_0_55px_rgba(168,85,247,0.5)]">
+              <div className="rounded-full p-1 bg-[#10213a]">
+                <img
+                  src="/Barani.png"
+                  alt="Avatar"
+                  className="w-[220px] h-[220px] md:w-[320px] md:h-[320px] rounded-full object-cover [border:var(--avatar-border)]"
                 />
-              }
-            >
-              {homeSection?.buttons.downloadResume}
-            </ButtonComponent>
-            <ButtonComponent
-              onClick={() => alert("Button clicked!")}
-              className="w-full md:w-auto px-6 py-2 rounded-md bg-transparent [border:var(--border-button-secondary)] font-medium transition-opacity hover:opacity-80 active:opacity-70 flex gap-4 justify-center items-center text-[var(--icon-color-secondary)]"
-              startIcon={
-                <DownloadOutlinedIcon
-                  style={{ color: "var(--icon-color-secondary)" }}
-                />
-              }
-            >
-              {homeSection?.buttons.contactMe}
-            </ButtonComponent>
-          </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
