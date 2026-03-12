@@ -46,7 +46,7 @@ const Home: React.FC<Propstypes> = ({setActivePage, homeSection}) => {
             <h1 className="text-[44px] md:text-[72px] font-bold mb-2 leading-[0.95] tracking-tight">
               {homeSection?.name}
             </h1>
-            <p className="text-[28px] md:text-[36px] font-semibold leading-tight mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)]">
+            <p suppressHydrationWarning className="text-[28px] md:text-[36px] font-semibold leading-tight mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)]">
               {typedTitle}
               <span className="animate-pulse text-[var(--color-primary)]">|</span>
             </p>
@@ -93,15 +93,20 @@ const Home: React.FC<Propstypes> = ({setActivePage, homeSection}) => {
             transition={{ duration: 0.75, ease: "easeOut", delay: 0.1 }}
             suppressHydrationWarning
           >
-            <div className="rounded-full p-2 [background:var(--text-bg)] shadow-[0_0_55px_rgba(168,85,247,0.5)]">
-              <div className="rounded-full p-1 bg-[#10213a]">
-                <img
-                  src="/Barani.png"
-                  alt="Avatar"
-                  className="w-[220px] h-[220px] md:w-[320px] md:h-[320px] rounded-full object-cover [border:var(--avatar-border)]"
-                />
+            <motion.div
+              animate={{ y: [0, -18, 0] }}
+              transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <div suppressHydrationWarning className="rounded-full p-2 [background:var(--text-bg)] shadow-[0_0_55px_rgba(168,85,247,0.5)]">
+                <div suppressHydrationWarning className="rounded-full p-1 bg-[#10213a]">
+                  <img
+                    src="/Barani.png"
+                    alt="Avatar"
+                    className="w-[220px] h-[220px] md:w-[320px] md:h-[320px] rounded-full object-cover"
+                  />
+                </div>
               </div>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>
