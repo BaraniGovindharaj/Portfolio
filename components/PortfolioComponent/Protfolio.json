@@ -157,6 +157,12 @@
             "title": "Performance Focused",
             "description": "Optimizing applications for speed and user experience",
             "icon": "award"
+          },
+          {
+            "id": 4,
+            "title": "Location",
+            "description": "Based in Bengaluru",
+            "icon": "location"
           }
         ],
         "Technologies": {
@@ -341,7 +347,7 @@
           },
           {
             "type": "LinkedIn",
-            "value": "www.linkedin.com/in/barani-govindharaj-b057ab219",
+            "value": "https://www.linkedin.com/in/barani-govindharaj-b057ab219",
             "icon": "linkedin_icon.png"
           },
           {

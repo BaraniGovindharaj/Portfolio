@@ -49,7 +49,7 @@ export default function Skills({ skillsSection }: SkillsProps) {
                 <div className="section-title-underline" />
                 <motion.p className="text-md text-center mb-10 mt-4 leading-none text-white/70" variants={sectionItem}>{skillsSection.description}</motion.p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 cursor-pointer">
                     {skillGroups.map(([groupName, group]) => (
                         <motion.div key={groupName} className="panel-card p-6" variants={sectionItem}>
                             <h3 className="text-lg font-semibold mb-4 capitalize text-[var(--icon-color-secondary)]">{groupName}</h3>
@@ -76,11 +76,11 @@ export default function Skills({ skillsSection }: SkillsProps) {
                             </ul>
                         </motion.div>
                     ))}
-            </div>
+                 </div>
                 <motion.div className="mt-8 panel-card p-6" variants={sectionItem}>
                     <h3 className="text-xl font-semibold mb-4">{competenciesTitle}</h3>
                     {competencies.length > 0 ? (
-                        <div className="flex flex-wrap gap-2">
+                        <div className="flex flex-wrap gap-2 ">
                             {competencies.map((competency, index) => (
                                 <span
                                     key={index}

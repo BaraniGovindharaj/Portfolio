@@ -7,6 +7,7 @@ import CodeOffOutlinedIcon from '@mui/icons-material/CodeOffOutlined';
 import HomeRepairServiceOutlinedIcon from '@mui/icons-material/HomeRepairServiceOutlined';
 import WorkspacePremiumOutlinedIcon from '@mui/icons-material/WorkspacePremiumOutlined';
 import { sectionContainer, sectionItem, sectionViewport } from "./motionVariants";
+import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 
 export default function About({ aboutSection }: AboutProps) {
 	if (!aboutSection) {
@@ -32,12 +33,13 @@ export default function About({ aboutSection }: AboutProps) {
 				</motion.div>
                 {/* stats */}
                 {aboutSection.stats && (
-                  <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
                     {aboutSection.stats.map((stat, index) => (
                       <motion.div key={index} className="panel-card p-6" variants={sectionItem}>
                         {stat.icon === "code" && <CodeOffOutlinedIcon style={{ fontSize: '30px', color: 'var(--icon-color-primary)' }} />}
                         {stat.icon === "briefcase" && <HomeRepairServiceOutlinedIcon style={{ fontSize: '30px', color: 'var(--icon-color-primary)' }} />}
                         {stat.icon === "award" && <WorkspacePremiumOutlinedIcon style={{ fontSize: '30px', color: 'var(--icon-color-primary)' }} />}
+                        {stat.icon === "location" && <LocationOnOutlinedIcon style={{ fontSize: '30px', color: 'var(--icon-color-primary)' }} />}
                         <p className="text-2xl font-bold mb-2 mt-2">{stat.title}</p>
                         <p className="text-sm md:text-base text-white/75">{stat.description}</p>
                       </motion.div>

@@ -70,7 +70,14 @@ export default function Footer({ name, contactInformation }: FooterProps) {
             <button
               key={item.key}
               type="button"
-              onClick={() => item.link && window.open(item.link.startsWith("http") ? item.link : item.key === "email" ? `mailto:${item.link}` : `tel:${item.link}`, "_blank")}
+              onClick={() => {
+                if (!item.link) return;
+                let url = item.link;
+                if (item.key === "email") url = `mailto:${item.link}`;
+                else if (item.key === "phone") url = `tel:${item.link}`;
+                else if (!item.link.startsWith("http")) url = `https://${item.link}`;
+                window.open(url, "_blank");
+              }}
               className="h-9 w-9 rounded-md [border:1px_solid_rgba(96,165,250,0.3)] bg-white/5 text-white/60 hover:text-[var(--color-primary)] transition-colors flex items-center justify-center"
               aria-label={item.key}
             >
