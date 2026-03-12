@@ -64,7 +64,7 @@ export default function Footer({ name, contactInformation }: FooterProps) {
       viewport={sectionViewport}
     >
       <div className="w-full max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-        <motion.p className="text-sm text-white/60 text-center md:text-left" variants={sectionItem}>© {currentYear} {name || "Barani Govindharaj"}. All rights reserved.</motion.p>
+        <motion.p className="text-sm text-white/60 text-center md:text-left" variants={sectionItem}>© {currentYear} 💖 {name || "Barani Govindharaj"}. All rights reserved.</motion.p>
         <motion.div className="flex items-center gap-3" variants={sectionItem}>
           {socialLinks.map((item) => (
             <button

@@ -27,9 +27,19 @@ function useTypingEffect(text: string, speed = 20) {
 
 const Home: React.FC<Propstypes> = ({setActivePage, homeSection}) => {
   const typedTitle = useTypingEffect(homeSection?.title ?? "", 100);
+  const resumePath = "/BaraniG.pdf";
 
    const handleSectionScroll = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleResumeDownload = () => {
+    const anchor = document.createElement("a");
+    anchor.href = resumePath;
+    anchor.download = "BaraniG.pdf";
+    document.body.appendChild(anchor);
+    anchor.click();
+    document.body.removeChild(anchor);
   };
 
   return (
@@ -60,7 +70,7 @@ const Home: React.FC<Propstypes> = ({setActivePage, homeSection}) => {
                 {homeSection?.buttons.viewProjects}
               </ButtonComponent>
               <ButtonComponent
-                onClick={() => alert("Button clicked!")}
+                onClick={handleResumeDownload}
                 className="px-5 py-2.5 rounded-md bg-transparent [border:var(--border-button-primary)] text-white font-semibold transition-opacity hover:opacity-85 active:opacity-70 flex gap-3 items-center justify-center"
                 startIcon={
                   <DownloadOutlinedIcon
