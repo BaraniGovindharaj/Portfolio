@@ -6,7 +6,7 @@
         "greeting": "👋 Hello I'm",
         "name": "Barani Govindharaj",
         "title": "Software Engineer | Reactjs & Nextjs | React Native | Python",
-        "summary": "Frontend Developer with 3.4+ years of experience building scalable web applications using React.js, Next.js, TypeScript, Redux Toolkit, and AEM. Skilled in developing real-time systems with WebSocket, optimizing UI performance, and creating responsive, accessible interfaces. Experienced in Chrome Extension and React Native mobile app development, delivering production-ready solutions in Agile environments.",
+        "summary": "Frontend Developer with 3.7+ years of experience building scalable web applications using React.js, Next.js, TypeScript, Redux Toolkit, and AEM. Skilled in developing real-time systems with WebSocket, optimizing UI performance, and creating responsive, accessible interfaces. Experienced in Chrome Extension and React Native mobile app development, delivering production-ready solutions in Agile environments.",
         "buttons": {
           "viewProjects": "View Projects",
           "downloadResume": "Download Resume",
@@ -142,7 +142,7 @@
         "stats": [
           {
             "id": 1,
-            "title": "3.4+ Years Experience",
+            "title": "3.7+ Years Experience",
             "description": "Building modern web applications with the React ecosystem",
             "icon": "code"
           },
