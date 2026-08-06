@@ -20,6 +20,25 @@
         "description": "A selection of my recent work and personal projects",
         "projects": [
           {
+            "name": "AllMileOps.ai",
+            "description": "Built scalable, reusable React components for dispatch planning, fleet setup, CSV upload, and load management workflow",
+            "image": "https://app.allmileops.ai/assets/truck-CzFR7owv.png",
+            "sourceCodeLink": "https://app.allmileops.ai/",
+            "liveDemoLink": "https://app.allmileops.ai/signin",
+            "technologies": [
+              "React.js",
+              "Vite.js",
+              "TypeScript",
+              "WebSocket",
+              "Material-UI",
+              "Framer-Motion"
+            ],
+            "cta": {
+              "sourceCode": "Source",
+              "liveDemo": "Live Page"
+            }
+          },
+          {
             "name": "Showcasa AI",
             "description": "AI-powered media generation platform that transforms user prompts into images, videos, reels, cartoons, short films, and podcasts in real time.",
             "image": "https://showcasaai.blob.core.windows.net/applicationasset/1440_Image.svg",
