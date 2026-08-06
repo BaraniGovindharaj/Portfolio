@@ -23,7 +23,7 @@
             "name": "AllMileOps.ai",
             "description": "Built scalable, reusable React components for dispatch planning, fleet setup, CSV upload, and load management workflow",
             "image": "https://app.allmileops.ai/assets/truck-CzFR7owv.png",
-            "sourceCodeLink": "https://app.allmileops.ai/",
+            "sourceCodeLink": "https://www.allmileops.ai/",
             "liveDemoLink": "https://app.allmileops.ai/signin",
             "technologies": [
               "React.js",
